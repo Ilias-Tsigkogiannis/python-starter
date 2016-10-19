@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Runnable Starter Application</title>
-    <link href="{{ url_for('static', filename='style.css') }}" rel=stylesheet type=text/css></link>
-    <link rel="shortcut icon" href="{{ url_for('static/images', filename='favicon.ico') }}">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel=stylesheet type=text/css></link>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
   </head>
   <body>
     <div id="content">
@@ -22,19 +22,19 @@
         <p>
           Current branch:
           <b>
-            {{ name }}
+            {{ git.name }}
           </b>
         </p>
         <p>
           Latest commit:
           <b>
-            {{ shortSHA }}
+            {{ git.shortSHA }}
           </b>
         </p>
         <p>
           Last commit author:
           <b>
-            {{ lastCommitAuthor }}
+            {{ git.lastCommitAuthor }}
           </b>
         </p>
       </section>

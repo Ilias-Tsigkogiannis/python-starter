@@ -1,4 +1,4 @@
-FROM python
+FROM python:2.7
 
 # Cache Dependency Install
 RUN mkdir -p /app

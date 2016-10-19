@@ -1,19 +1,19 @@
 import subprocess
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-  error = None
   # Get gitInfo
-  name = subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"])
-  sHA = subprocess.check_output(["git", "rev-parse", "HEAD"])
-  shortSHA = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
-  lastCommitTime = subprocess.check_output(["git", "log", "--format=\"%ai\"", "-n1", "HEAD"])
-  lastCommitMessage = subprocess.check_output(["git", "log"," --format=\"%B\"", "-n1", "HEAD"])
-  lastCommitAuthor = subprocess.check_output(["git", "log", "--format=\"%aN\"", "-n1", "HEAD"])
-  remoteOriginUrl = subprocess.check_output(["git", "config", "--get-all", "remote.origin.url"])
-  return render_template('index.html', error=error)
+  git = {}  
+  git['name'] = subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"]).rstrip()
+  git['sHA'] = subprocess.check_output(["git", "rev-parse", "HEAD"]).rstrip()
+  git['shortSHA'] = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).rstrip()
+  git['lastCommitTime'] = subprocess.check_output(["git", "log", "--format=\"%ai\"", "-n1", "HEAD"]).rstrip()
+  git['lastCommitMessage'] = subprocess.check_output(["git", "log","--format=\"%B\"", "-n1", "HEAD"]).rstrip()
+  git['lastCommitAuthor'] = subprocess.check_output(["git", "log", "--format=\"%aN\"", "-n1", "HEAD"]).rstrip().strip("\"")
+  git['remoteOriginUrl'] = subprocess.check_output(["git", "config", "--get-all", "remote.origin.url"]).rstrip()
+  return render_template('index.html', git=git )
 
 if __name__ == "__main__":
-    app.run()
+  app.run(host='0.0.0.0')
