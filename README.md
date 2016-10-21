@@ -1,4 +1,4 @@
-# RunnableDemo Sample NodeJS Front-end application
+# RunnableDemo Sample Python web application
 
 ## Running locally
 
