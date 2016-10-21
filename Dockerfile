@@ -9,5 +9,5 @@ RUN pip install -r requirements.txt
 # Add Repository
 ADD . /app
 
-EXPOSE 5000
+EXPOSE 80
 CMD python main.py
