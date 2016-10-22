@@ -9,20 +9,20 @@ $ python main.py
 
 ## Running on Runnable.io
 
-This guide will help you setup Runnable templates for a simple Django application. This guide will assume that you don't have a Dockerfile and want Runnable to generate the Dockerfile for you using a simple setup guide.
+This guide will help you setup Runnable templates for a simple Pyhton application. This guide will assume that you don't have a Dockerfile and want Runnable to generate the Dockerfile for you using a simple setup guide.
 
 ## Configuring the App 
 
-* From the *Configure* page, click on the *Create Template* button. Choose the Django repository you want to add.<br />
-![Add Template](/images/create-django-1.png)  
+* From the *Configure* page, click on the *Create Template* button. Choose the Pyhton repository you want to add.<br />
+![Add Template](/images/create-python-1.png)  
 * Select _Start up with our setup guide_ as your configuration mode.<br />
-![Select Mode](/images/create-django-3.png)  
+![Select Mode](/images/create-python-3.png)  
 * Name your template.<br />
-![Name Template](/images/create-django-5.png)  
+![Name Template](/images/create-python-5.png)  
 * Now you can select your *Stack Type*. This is the environment that your repository requires for runtime. In our case, it is *Python*.<br />
-![Select Stack](/images/create-django-4.png)  
+![Select Stack](/images/create-python-4.png)  
 * After clicking *Next*, you will be presented with the following three options: *Packages*, *Build Commands*, and *Container CMD*.<br />
-![Build Commands and CMD](/images/create-django-6.png)  
+![Build Commands and CMD](/images/create-python-6.png)  
 
 ### Packages 
 
@@ -38,9 +38,9 @@ For our simple API repository, this is where we’ll specify `pip install -r 're
 
 ### Container CMD 
 
-Here the main run command for your app is specified. Important: the container will stop running when this command exits. For our simple Django app, we will specify `python manage.py runserver 0.0.0.0:8000`.
+Here the main run command for your app is specified. Important: the container will stop running when this command exits. For our simple Pyhton app, we will specify `python main.py`.
 
->Note that we are using 0.0.0.0 to bind to all interfaces. This will allow us to access the container from other containers and through the browser."
+>Note that we are using 0.0.0.0 to bind to all interfaces in our `main.py`. This will allow us to access the container from other containers and through the browser."
 
 __Container CMD__ is where the invocation command for our app is specified. _Important:_ the container will stop running when this command exits.
 
@@ -109,7 +109,7 @@ This is the Environment URL corresponding to the container launched from the def
 2. In our case, we added a MySQL template.
 ![node14](/images/node14.png)  
 
-3. Our repository is setup to use the environment variable "MYSQL_HOST" to reference the hostname for MYSQL. To connect our Django repository template to the "MySQL" template, open up the "Environment Variables" tool in the Django template configuration modal.
+3. Our repository is setup to use the environment variable "MYSQL_HOST" to reference the hostname for MYSQL. To connect our Pyhton repository template to the "MySQL" template, open up the "Environment Variables" tool in the Pyhton template configuration modal.
 
 > If you don't use Environment Variables for host discovery, you may have to modify your repository to use the Runnable template URL as your MySQL hostname. You can do this by either uploading a file using "Files & SSH Keys" or by actually modifying your repository on Github.com.
 
@@ -118,7 +118,7 @@ This is the Environment URL corresponding to the container launched from the def
 
 5. Click *Save & Build*.
 
-6. The Django template is now successfully connected with the "MySQL" template!
+6. The Pyhton template is now successfully connected with the "MySQL" template!
 
 Head on over to our [Branches](https://support.runnable.com/hc/en-us/sections/202755686-Branches) section to see how to containers from your templates.
 
