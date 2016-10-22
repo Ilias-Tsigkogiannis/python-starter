@@ -14,15 +14,15 @@ This guide will help you setup Runnable templates for a simple Pyhton applicatio
 ## Configuring the App 
 
 * From the *Configure* page, click on the *Create Template* button. Choose the Pyhton repository you want to add.<br />
-![Add Template](/images/create-python-1.png)  
+![Add Template](/images/select-repo.png)  
 * Select _Start up with our setup guide_ as your configuration mode.<br />
-![Select Mode](/images/create-python-3.png)  
+![Select Mode](/images/setup-guide.png)  
 * Name your template.<br />
-![Name Template](/images/create-python-5.png)  
+![Name Template](/images/name-template.png)  
 * Now you can select your *Stack Type*. This is the environment that your repository requires for runtime. In our case, it is *Python*.<br />
-![Select Stack](/images/create-python-4.png)  
+![Select Stack](/images/select-stack.png)  
 * After clicking *Next*, you will be presented with the following three options: *Packages*, *Build Commands*, and *Container CMD*.<br />
-![Build Commands and CMD](/images/create-python-6.png)  
+![Build Commands and CMD](/images/choose-cmd.png)  
 
 ### Packages 
 
@@ -80,7 +80,7 @@ These logs correspond to all the output from the build process of your template.
 
 These logs correspond to all the output from the run process of a container launched from your template. Any errors here will correspond to configuration options you have specified in your CMD Command or Environment Variables. 
 
-![node9](/images/node9.png)  
+![CMD Logs](/images/cmd-logs.png)  
 
 > Your repository can crash for several reasons outside of your configuration on Runnable. There could be several factors ranging from a bug in your code or a misconfigured connection. 
 
@@ -88,13 +88,13 @@ These logs correspond to all the output from the run process of a container laun
 
 This is a terminal session into a container launched from your template. This is useful to verify any configuration details you may want to confirm.
 
-![node10](/images/node10.png)  
+![Terminal](/images/terminal.png)  
 
 ### URL
 
 This is the Environment URL corresponding to the container launched from the default branch. Check [this](https://support.runnable.com/hc/en-us/articles/212802006-Runnable-URLs) article out for more about Runnable URLs.
 
-![node12](/images/node12.png)
+![Runnable URL](/images/url.png)
 
 * *Save &amp; Build* to save our changes and trigger your first build. ![Trigger Build](https://support.runnable.com/hc/en-us/article_attachments/203162596/Screen_Shot_2016-03-16_at_9.26.49_PM.png)
 
@@ -107,14 +107,14 @@ This is the Environment URL corresponding to the container launched from the def
 1. Follow one of our DB Quickstarts to add and seed a database: [MySQL](https://support.runnable.com/hc/en-us/sections/202755686-Branches) / [PostgresQL](https://support.runnable.com/hc/en-us/sections/202755686-Branches) / [MongoDB](https://support.runnable.com/hc/en-us/sections/202755686-Branches).
 
 2. In our case, we added a MySQL template.
-![node14](/images/node14.png)  
+![MySQL 1](/images/mysql1.png)  
 
 3. Our repository is setup to use the environment variable "MYSQL_HOST" to reference the hostname for MYSQL. To connect our Pyhton repository template to the "MySQL" template, open up the "Environment Variables" tool in the Pyhton template configuration modal.
 
 > If you don't use Environment Variables for host discovery, you may have to modify your repository to use the Runnable template URL as your MySQL hostname. You can do this by either uploading a file using "Files & SSH Keys" or by actually modifying your repository on Github.com.
 
 4. Specify the the value for the "MYSQL_HOST" environment variable. From our article [Runnable URLs](https://support.runnable.com/hc/en-us/articles/212802006-Runnable-URLs), it is clear that we need to use MySQL's template URL to connect to it. As a convenience we provide all template URLs in the Environment Variables tab.
-![node15](/images/node15.png) ![node16](/images/node16.png) ![node17](/images/node17.png)  
+![MySQL 2](/images/mysql2.png) ![MySQL 3](/images/mysql3.png) ![MySQL 4](/images/mysql4.png)  
 
 5. Click *Save & Build*.
 
