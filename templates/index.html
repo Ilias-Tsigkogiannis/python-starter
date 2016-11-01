@@ -6,37 +6,16 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
   </head>
   <body>
-    <div id="content">
-      <section class="splash">
-        <h2>Hello World!</h2>
-        <h4>Your web application is running!</h4>
-        <p>
-          Make sure to
-          <b>commit</b>
-          or add a
-          <b>branch</b>
-          to see your changes show up below.
-        </p>
+    <div>
+      <section>
+        <h1>Hello World!</h1>
+        <h2>Your web application is running!</h2>
+        <p>Make a commit to see your changes show up below.</p>
       </section>
-      <section class="info">
-        <p>
-          Current branch:
-          <b>
-            {{ git.name }}
-          </b>
-        </p>
-        <p>
-          Latest commit:
-          <b>
-            {{ git.shortSHA }}
-          </b>
-        </p>
-        <p>
-          Last commit author:
-          <b>
-            {{ git.lastCommitAuthor }}
-          </b>
-        </p>
+      <section>
+        <p>Current branch: <b>{{ git.name }}</b></p>
+        <p>Commit: <b>{{ git.shortSHA }}</b></p>
+        <p>Commit author: <b>{{ git.lastCommitAuthor }}</b></p>
       </section>
     </div>
   </body>
